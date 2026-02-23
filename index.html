@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 2026 AI Productivity Playbook — 100+ Tested Prompts & Workflows</title>
+<meta name="description" content="100+ copy-paste AI prompts and workflows for professionals. Tested on ChatGPT, Claude & Gemini. Instant download. $9.">
+<meta property="og:title" content="The 2026 AI Productivity Playbook">
+<meta property="og:description" content="100+ tested AI prompts for writing, productivity, business & career. $9 instant download.">
+<meta property="og:type" content="product">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0f;
+    --paper: #f5f3ee;
+    --cream: #ede9e0;
+    --accent: #e8500a;
+    --accent2: #1a1aff;
+    --muted: #8a8680;
+    --border: #d4cfc6;
+    --card: #ffffff;
+    --mono: 'DM Mono', monospace;
+    --display: 'Bebas Neue', cursive;
+    --body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    position: fixed; width: 10px; height: 10px;
+    background: var(--accent); border-radius: 50%;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.2s, height 0.2s;
+    mix-blend-mode: multiply;
+  }
+  .cursor-ring {
+    position: fixed; width: 36px; height: 36px;
+    border: 1.5px solid var(--accent); border-radius: 50%;
+    pointer-events: none; z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease, width 0.3s, height 0.3s;
+    mix-blend-mode: multiply;
+  }
+  body:hover .cursor { opacity: 1; }
+
+  /* ── NOISE TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0; opacity: 0.4;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+  }
+  .logo span { color: var(--accent); }
+  .header-cta {
+    background: var(--ink); color: var(--paper);
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 10px 22px; text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    border: 1px solid var(--ink);
+  }
+  .header-cta:hover { background: var(--accent); border-color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    padding: 80px 48px 80px 48px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 32px;
+  }
+  .hero-badge::before {
+    content: ''; width: 28px; height: 1px; background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: var(--display);
+    font-size: clamp(72px, 8vw, 120px);
+    line-height: 0.92;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .hero-title .accent-word { color: var(--accent); }
+  .hero-title .outline-word {
+    -webkit-text-stroke: 2px var(--ink);
+    color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 17px; font-weight: 300; line-height: 1.65;
+    color: #3a3830; max-width: 420px; margin-bottom: 48px;
+  }
+
+  .hero-actions { display: flex; flex-direction: column; gap: 16px; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: space-between;
+    background: var(--accent); color: white;
+    font-family: var(--body); font-size: 15px; font-weight: 500;
+    padding: 18px 28px; text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    max-width: 340px;
+  }
+  .btn-primary:hover { background: #c43d00; transform: translateX(4px); }
+  .btn-arrow { font-size: 20px; }
+
+  .hero-proof {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--mono); font-size: 10px;
+    color: var(--muted); letter-spacing: 0.06em;
+  }
+  .hero-proof-divider { width: 1px; height: 14px; background: var(--border); }
+
+  .hero-right {
+    background: var(--ink);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Mock PDF preview */
+  .pdf-mock {
+    width: 68%; aspect-ratio: 0.707;
+    background: #0d1117;
+    border: 1px solid #1e2533;
+    position: relative; overflow: hidden;
+    box-shadow: -40px 40px 80px rgba(0,0,0,0.6);
+    transform: rotate(-2deg);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: rotate(-2deg) translateY(0); }
+    50% { transform: rotate(-2deg) translateY(-12px); }
+  }
+
+  .pdf-mock-header {
+    background: #161b22; padding: 16px 20px;
+    border-bottom: 1px solid #1e2533;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .pdf-mock-title {
+    font-family: var(--mono); font-size: 9px; color: #00d4ff;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .pdf-version {
+    font-family: var(--mono); font-size: 8px; color: #4a5568;
+  }
+  .pdf-mock-body { padding: 20px; }
+  .pdf-line {
+    height: 2px; border-radius: 1px; margin-bottom: 8px;
+    background: linear-gradient(90deg, #1e2533, transparent);
+  }
+  .pdf-line.accent { background: linear-gradient(90deg, #00d4ff 20%, transparent); height: 1.5px; }
+  .pdf-line.purple { background: linear-gradient(90deg, #7c3aed 15%, transparent); }
+  .pdf-line.short { width: 55%; }
+  .pdf-line.med { width: 78%; }
+  .pdf-line.full { width: 100%; }
+
+  .pdf-prompt-card {
+    background: #161b22; border: 1px solid #1e2533;
+    padding: 10px 12px; margin: 12px 0;
+    border-left: 2px solid #7c3aed;
+  }
+  .pdf-prompt-label {
+    font-family: var(--mono); font-size: 7px; color: #7c3aed;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;
+  }
+  .pdf-prompt-lines div {
+    height: 1.5px; background: #2d3748; margin-bottom: 4px; border-radius: 1px;
+  }
+
+  .hero-right-label {
+    position: absolute; bottom: 40px; left: 40px;
+    font-family: var(--mono); font-size: 9px;
+    color: rgba(255,255,255,0.2); letter-spacing: 0.1em;
+    text-transform: uppercase; writing-mode: vertical-rl;
+  }
+
+  /* Marquee strip */
+  .marquee-strip {
+    background: var(--accent); overflow: hidden;
+    padding: 14px 0; white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-flex; gap: 0;
+    animation: marquee 20s linear infinite;
+  }
+  .marquee-item {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: white; padding: 0 32px;
+  }
+  .marquee-item::after { content: '✦'; margin-left: 32px; opacity: 0.5; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SECTIONS ── */
+  section { position: relative; z-index: 1; }
+
+  .section-label {
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 48px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside-section { padding: 100px 48px; }
+  .inside-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .inside-card {
+    background: var(--paper); padding: 40px 32px;
+    transition: background 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .inside-card:hover { background: var(--cream); }
+  .inside-card::before {
+    content: attr(data-num);
+    position: absolute; top: 20px; right: 24px;
+    font-family: var(--display); font-size: 80px; line-height: 1;
+    color: var(--border); pointer-events: none;
+  }
+  .card-icon {
+    font-size: 28px; margin-bottom: 20px; display: block;
+  }
+  .card-title {
+    font-family: var(--display); font-size: 28px; line-height: 1.1;
+    color: var(--ink); margin-bottom: 10px; letter-spacing: 0.02em;
+  }
+  .card-count {
+    font-family: var(--mono); font-size: 10px; color: var(--accent);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .card-desc { font-size: 14px; font-weight: 300; color: #4a4740; line-height: 1.6; }
+
+  /* ── PROMPTS PREVIEW ── */
+  .prompts-section {
+    padding: 100px 48px;
+    background: var(--ink); color: var(--paper);
+  }
+  .prompts-section .section-label { color: rgba(255,255,255,0.3); }
+  .prompts-section .section-label::after { background: rgba(255,255,255,0.1); }
+
+  .prompts-section h2 {
+    font-family: var(--display); font-size: clamp(48px, 6vw, 84px);
+    line-height: 0.95; margin-bottom: 60px;
+    color: var(--paper); letter-spacing: 0.02em;
+  }
+  .prompts-section h2 em { color: #00d4ff; font-style: normal; }
+
+  .prompt-showcase {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    background: rgba(255,255,255,0.05);
+  }
+  .prompt-item {
+    background: #0d1117; padding: 28px 32px;
+    border-left: 2px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+  }
+  .prompt-item:hover { border-left-color: #00d4ff; background: #131920; }
+  .prompt-item-num {
+    font-family: var(--mono); font-size: 10px; color: #4a5568;
+    letter-spacing: 0.08em; margin-bottom: 10px;
+  }
+  .prompt-item-title {
+    font-size: 16px; font-weight: 500; color: var(--paper);
+    margin-bottom: 6px; line-height: 1.3;
+  }
+  .prompt-item-tag {
+    font-family: var(--mono); font-size: 9px;
+    color: #7c3aed; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  /* ── WORKFLOW FEATURE ── */
+  .workflow-section { padding: 100px 48px; }
+  .workflow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .workflow-text h2 {
+    font-family: var(--display); font-size: clamp(44px, 5vw, 72px);
+    line-height: 0.95; margin-bottom: 24px; letter-spacing: 0.02em;
+  }
+  .workflow-text h2 span { color: var(--accent); }
+  .workflow-text p { font-size: 16px; font-weight: 300; color: #4a4740; line-height: 1.7; margin-bottom: 32px; }
+  .workflow-list { display: flex; flex-direction: column; gap: 0; }
+  .workflow-item {
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 18px 0; border-bottom: 1px solid var(--border);
+  }
+  .workflow-item:last-child { border-bottom: none; }
+  .workflow-step-num {
+    font-family: var(--display); font-size: 40px; color: var(--border);
+    line-height: 1; flex-shrink: 0; width: 40px;
+  }
+  .workflow-step-text strong { display: block; font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+  .workflow-step-text span { font-size: 13px; color: var(--muted); }
+
+  .workflow-visual {
+    background: var(--ink); padding: 40px;
+    position: relative; overflow: hidden;
+  }
+  .workflow-visual::before {
+    content: 'WORKFLOW';
+    position: absolute; top: -10px; left: -10px;
+    font-family: var(--display); font-size: 120px; line-height: 1;
+    color: rgba(255,255,255,0.03); pointer-events: none;
+    white-space: nowrap;
+  }
+  .workflow-steps-visual { position: relative; z-index: 1; }
+  .wv-step {
+    display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start;
+  }
+  .wv-num {
+    width: 28px; height: 28px; background: var(--accent2);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    color: white; flex-shrink: 0;
+  }
+  .wv-content { flex: 1; }
+  .wv-title { font-family: var(--mono); font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .wv-prompt {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 12px;
+    font-family: var(--mono); font-size: 9.5px; color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+  }
+  .wv-connector {
+    width: 1px; height: 12px; background: rgba(255,255,255,0.1);
+    margin-left: 14px; margin-bottom: 4px;
+  }
+
+  /* ── PRICING ── */
+  .pricing-section {
+    padding: 100px 48px;
+    background: var(--cream);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .pricing-left h2 {
+    font-family: var(--display); font-size: clamp(48px, 6vw, 80px);
+    line-height: 0.92; margin-bottom: 24px; letter-spacing: 0.02em;
+  }
+  .pricing-left p { font-size: 16px; font-weight: 300; color: #4a4740; line-height: 1.7; }
+
+  .price-card {
+    background: var(--ink); color: var(--paper);
+    padding: 48px; position: relative; overflow: hidden;
+  }
+  .price-card::after {
+    content: '$9';
+    position: absolute; right: -20px; top: -20px;
+    font-family: var(--display); font-size: 160px; line-height: 1;
+    color: rgba(255,255,255,0.04); pointer-events: none;
+  }
+  .price-amount {
+    font-family: var(--display); font-size: 96px; line-height: 1;
+    color: var(--accent); margin-bottom: 4px; position: relative; z-index: 1;
+  }
+  .price-period {
+    font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,0.3);
+    letter-spacing: 0.08em; margin-bottom: 32px;
+  }
+  .price-features { list-style: none; margin-bottom: 40px; position: relative; z-index: 1; }
+  .price-features li {
+    padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 14px; font-weight: 300; display: flex; align-items: center; gap: 12px;
+  }
+  .price-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .btn-buy {
+    display: block; text-align: center;
+    background: var(--accent); color: white;
+    font-family: var(--body); font-size: 16px; font-weight: 500;
+    padding: 18px 32px; text-decoration: none;
+    transition: background 0.2s; position: relative; z-index: 1;
+  }
+  .btn-buy:hover { background: #c43d00; }
+  .price-guarantee {
+    font-family: var(--mono); font-size: 9px; color: rgba(255,255,255,0.2);
+    letter-spacing: 0.06em; text-align: center; margin-top: 16px;
+  }
+
+  /* ── FAQ ── */
+  .faq-section { padding: 100px 48px; max-width: 800px; margin: 0 auto; }
+  .faq-section h2 {
+    font-family: var(--display); font-size: 56px; margin-bottom: 48px; letter-spacing: 0.02em;
+  }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-question {
+    width: 100%; text-align: left; background: none; border: none;
+    padding: 24px 0; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--body); font-size: 16px; font-weight: 500; color: var(--ink);
+  }
+  .faq-icon { font-size: 20px; color: var(--accent); transition: transform 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-answer {
+    max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+  }
+  .faq-item.open .faq-answer { max-height: 200px; }
+  .faq-answer p {
+    padding: 0 0 24px; font-size: 14px; font-weight: 300;
+    color: #4a4740; line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink); color: rgba(255,255,255,0.3);
+    padding: 48px; display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em;
+  }
+  footer span { color: var(--accent); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    header { padding: 16px 24px; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 80px 24px 60px; }
+    .hero-right { height: 400px; }
+    .inside-grid { grid-template-columns: 1fr 1fr; }
+    .inside-section, .workflow-section, .prompts-section { padding: 72px 24px; }
+    .pricing-section { grid-template-columns: 1fr; padding: 72px 24px; gap: 48px; }
+    .workflow-grid { grid-template-columns: 1fr; gap: 48px; }
+    .prompt-showcase { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
+    .faq-section { padding: 72px 24px; }
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo"><span>AI</span> Productivity Labs</div>
+  <a href="https://payhip.com/Reade0707" class="header-cta">Buy Now — $9</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Updated for 2026</div>
+    <h1 class="hero-title">
+      THE<br>
+      <span class="accent-word">AI</span><br>
+      <span class="outline-word">PLAYBOOK</span>
+    </h1>
+    <p class="hero-sub">
+      100+ copy-paste AI prompts and end-to-end workflows for professionals. 
+      Tested on ChatGPT, Claude & Gemini. Works immediately.
+    </p>
+    <div class="hero-actions">
+      <a href="https://payhip.com/Reade0707" class="btn-primary">
+        Get Instant Access — $9
+        <span class="btn-arrow">→</span>
+      </a>
+      <div class="hero-proof">
+        <span>PDF download</span>
+        <span class="hero-proof-divider"></span>
+        <span>Lifetime updates</span>
+        <span class="hero-proof-divider"></span>
+        <span>All AI tools</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="pdf-mock">
+      <div class="pdf-mock-header">
+        <div class="pdf-mock-title">2026 AI Productivity Playbook</div>
+        <div class="pdf-version">v1.0</div>
+      </div>
+      <div class="pdf-mock-body">
+        <div class="pdf-line accent full"></div>
+        <div class="pdf-line short" style="background:#7c3aed;height:1px;margin-bottom:16px;"></div>
+        <div class="pdf-prompt-card">
+          <div class="pdf-prompt-label">PROMPT #1 — Writing</div>
+          <div class="pdf-prompt-lines">
+            <div style="width:100%"></div>
+            <div style="width:85%"></div>
+            <div style="width:90%"></div>
+            <div style="width:60%"></div>
+          </div>
+        </div>
+        <div class="pdf-line med" style="background:#1e2533;margin:10px 0 6px;"></div>
+        <div class="pdf-line full" style="background:#1e2533;"></div>
+        <div class="pdf-prompt-card" style="border-left-color:#00d4ff;margin-top:12px;">
+          <div class="pdf-prompt-label" style="color:#00d4ff;">PROMPT #21 — Productivity</div>
+          <div class="pdf-prompt-lines">
+            <div style="width:100%"></div>
+            <div style="width:75%"></div>
+            <div style="width:88%"></div>
+          </div>
+        </div>
+        <div class="pdf-line med" style="background:#1e2533;margin:14px 0 6px;"></div>
+        <div class="pdf-line short" style="background:#1e2533;"></div>
+      </div>
+    </div>
+    <div class="hero-right-label">Instant PDF Download</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item">100+ Prompts</span>
+    <span class="marquee-item">8 Workflows</span>
+    <span class="marquee-item">Instant Download</span>
+    <span class="marquee-item">Lifetime Updates</span>
+    <span class="marquee-item">ChatGPT</span>
+    <span class="marquee-item">Claude</span>
+    <span class="marquee-item">Gemini</span>
+    <span class="marquee-item">$9 One-Time</span>
+    <span class="marquee-item">100+ Prompts</span>
+    <span class="marquee-item">8 Workflows</span>
+    <span class="marquee-item">Instant Download</span>
+    <span class="marquee-item">Lifetime Updates</span>
+    <span class="marquee-item">ChatGPT</span>
+    <span class="marquee-item">Claude</span>
+    <span class="marquee-item">Gemini</span>
+    <span class="marquee-item">$9 One-Time</span>
+  </div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside-section fade-up">
+  <div class="section-label">What's Inside</div>
+  <div class="inside-grid">
+    <div class="inside-card" data-num="01">
+      <span class="card-icon">✍️</span>
+      <div class="card-title">Writing & Comms</div>
+      <div class="card-count">20 Prompts</div>
+      <div class="card-desc">Cold emails, proposals, cover letters, LinkedIn posts, presentations, and more.</div>
+    </div>
+    <div class="inside-card" data-num="02">
+      <span class="card-icon">⚡</span>
+      <div class="card-title">Productivity</div>
+      <div class="card-count">20 Prompts</div>
+      <div class="card-desc">Weekly plans, task matrices, delegation briefs, SOPs, automation finders.</div>
+    </div>
+    <div class="inside-card" data-num="03">
+      <span class="card-icon">🔍</span>
+      <div class="card-title">Research & Learning</div>
+      <div class="card-count">15 Prompts</div>
+      <div class="card-desc">Learn anything faster, analyse competitors, synthesise research, prep interviews.</div>
+    </div>
+    <div class="inside-card" data-num="04">
+      <span class="card-icon">💼</span>
+      <div class="card-title">Business & Career</div>
+      <div class="card-count">20 Prompts</div>
+      <div class="card-desc">Business validation, salary negotiation, GTM strategy, investor pitches, hiring.</div>
+    </div>
+    <div class="inside-card" data-num="05">
+      <span class="card-icon">🧠</span>
+      <div class="card-title">Creative & Problem Solving</div>
+      <div class="card-count">15 Prompts</div>
+      <div class="card-desc">Break mental blocks, stress-test decisions, generate breakthrough ideas.</div>
+    </div>
+    <div class="inside-card" data-num="06" style="background:var(--ink);cursor:pointer;" onclick="window.location='https://payhip.com/Reade0707'">
+      <span class="card-icon" style="filter:brightness(5)">🔄</span>
+      <div class="card-title" style="color:white;">8 Full Workflows</div>
+      <div class="card-count" style="color:#00d4ff;">Multi-Step Templates</div>
+      <div class="card-desc" style="color:rgba(255,255,255,0.5);">End-to-end processes: product launch, content engine, job applications, and more.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMPT PREVIEWS -->
+<section class="prompts-section fade-up">
+  <div class="section-label">Sample Prompts</div>
+  <h2>A few of the<br><em>100+</em> inside.</h2>
+  <div class="prompt-showcase">
+    <div class="prompt-item">
+      <div class="prompt-item-num">PROMPT #07</div>
+      <div class="prompt-item-title">LinkedIn Post That Gets Engagement</div>
+      <div class="prompt-item-tag">Writing & Communication</div>
+    </div>
+    <div class="prompt-item">
+      <div class="prompt-item-num">PROMPT #23</div>
+      <div class="prompt-item-title">SOP Builder — Document Any Process</div>
+      <div class="prompt-item-tag">Productivity</div>
+    </div>
+    <div class="prompt-item">
+      <div class="prompt-item-num">PROMPT #56</div>
+      <div class="prompt-item-title">Business Idea Validator</div>
+      <div class="prompt-item-tag">Business & Career</div>
+    </div>
+    <div class="prompt-item">
+      <div class="prompt-item-num">PROMPT #76</div>
+      <div class="prompt-item-title">The Devil's Advocate — Stress-Test Any Plan</div>
+      <div class="prompt-item-tag">Problem Solving</div>
+    </div>
+    <div class="prompt-item">
+      <div class="prompt-item-num">PROMPT #57</div>
+      <div class="prompt-item-title">Salary Negotiation Script Builder</div>
+      <div class="prompt-item-tag">Career</div>
+    </div>
+    <div class="prompt-item">
+      <div class="prompt-item-num">PROMPT #90</div>
+      <div class="prompt-item-title">Failure Pre-Mortem — Prevent Project Disasters</div>
+      <div class="prompt-item-tag">Risk Management</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW FEATURE -->
+<section class="workflow-section fade-up">
+  <div class="section-label">Workflow Templates</div>
+  <div class="workflow-grid">
+    <div class="workflow-text">
+      <h2>One idea.<br><span>8 workflows.</span></h2>
+      <p>Chain prompts together in sequence. The output of each step becomes the input of the next. Complex work — done systematically.</p>
+      <div class="workflow-list">
+        <div class="workflow-item">
+          <div class="workflow-step-num">01</div>
+          <div class="workflow-step-text"><strong>Product Launch in 90 Minutes</strong><span>Brief → ICP → Positioning → Copy → Email sequence</span></div>
+        </div>
+        <div class="workflow-item">
+          <div class="workflow-step-num">02</div>
+          <div class="workflow-step-text"><strong>1 Idea → 10 Content Pieces</strong><span>Article → social posts → video script → SEO</span></div>
+        </div>
+        <div class="workflow-item">
+          <div class="workflow-step-num">03</div>
+          <div class="workflow-step-text"><strong>Job Application Accelerator</strong><span>JD analysis → CV tailoring → cover letter → interview prep</span></div>
+        </div>
+        <div class="workflow-item">
+          <div class="workflow-step-num">04</div>
+          <div class="workflow-step-text"><strong>+ 5 more workflows inside</strong><span>Competitive analysis, client proposals, product roadmaps...</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="workflow-visual">
+      <div class="workflow-steps-visual">
+        <div class="wv-step">
+          <div class="wv-num">1</div>
+          <div class="wv-content">
+            <div class="wv-title">Define Product</div>
+            <div class="wv-prompt">Describe [PRODUCT] in 3 bullet points: what it does, who it's for, why they buy it.</div>
+          </div>
+        </div>
+        <div class="wv-connector"></div>
+        <div class="wv-step">
+          <div class="wv-num">2</div>
+          <div class="wv-content">
+            <div class="wv-title">Build ICP → feeds from Step 1</div>
+            <div class="wv-prompt">Using the brief above, build a detailed ICP: demographics, pain points, language used.</div>
+          </div>
+        </div>
+        <div class="wv-connector"></div>
+        <div class="wv-step">
+          <div class="wv-num">3</div>
+          <div class="wv-content">
+            <div class="wv-title">Write Positioning → feeds from Step 2</div>
+            <div class="wv-prompt">For [WHO] who [PROBLEM], [PRODUCT] is the [CATEGORY] that [BENEFIT]...</div>
+          </div>
+        </div>
+        <div class="wv-connector"></div>
+        <div class="wv-step">
+          <div class="wv-num">→</div>
+          <div class="wv-content">
+            <div class="wv-title" style="color:#00d4ff;">5 steps → Full launch ready</div>
+            <div class="wv-prompt" style="border-color:rgba(0,212,255,0.2);color:rgba(255,255,255,0.4);">Homepage copy · Emails · Social posts · All done.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section fade-up">
+  <div class="pricing-left">
+    <div class="section-label">Pricing</div>
+    <h2>Simple.<br>Honest.<br>One price.</h2>
+    <p>No subscription. No upsell. No "pro tier." One PDF. One payment. Lifetime updates included. If the AI landscape shifts in 2026, your playbook updates with it.</p>
+  </div>
+  <div>
+    <div class="price-card">
+      <div class="price-amount">$9</div>
+      <div class="price-period">ONE-TIME PAYMENT — INSTANT DOWNLOAD</div>
+      <ul class="price-features">
+        <li>100+ professionally tested AI prompts</li>
+        <li>8 end-to-end workflow templates</li>
+        <li>Works with ChatGPT, Claude & Gemini</li>
+        <li>Prompt engineering cheat sheet</li>
+        <li>Quarterly updates — free forever</li>
+        <li>Instant PDF download after payment</li>
+      </ul>
+      <a href="https://payhip.com/Reade0707" class="btn-buy">Get Instant Access →</a>
+      <div class="price-guarantee">SECURE PAYMENT VIA PAYHIP + PAYPAL</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section fade-up">
+  <h2>Questions.</h2>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      Which AI tools does this work with?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer"><p>Every prompt has been tested on ChatGPT-4o, Claude 3.7, and Gemini 1.5 Pro. They work on all three. They will also work on any other LLM-based tool that accepts text prompts.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      What exactly do I receive after buying?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer"><p>Immediately after payment, Payhip sends you a download link for the PDF. The file is yours permanently. When new versions are released, you receive another download link automatically — no action required.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      How often is the playbook updated?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer"><p>Quarterly. As AI tools evolve through 2026, new prompts are added, existing ones are refined, and tool recommendations are updated. All updates are free for life with your one-time purchase.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      I'm not technical. Is this for me?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer"><p>Yes. Every prompt is copy-paste ready. Replace the [BRACKETS] with your specifics, paste into any AI tool, and get results. No technical knowledge required whatsoever.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      Do I need a paid AI subscription?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer"><p>No. These prompts work on free tiers of ChatGPT, Claude, and Gemini. Paid tiers give better results, but every prompt in this playbook produces useful output on free plans.</p></div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div style="background:var(--accent);padding:80px 48px;text-align:center;">
+  <div style="font-family:var(--display);font-size:clamp(48px,7vw,100px);color:white;line-height:0.95;margin-bottom:32px;letter-spacing:0.02em;">
+    STOP WRITING<br>BAD PROMPTS.
+  </div>
+  <a href="https://payhip.com/Reade0707" style="display:inline-block;background:white;color:var(--accent);font-family:var(--body);font-size:17px;font-weight:600;padding:20px 48px;text-decoration:none;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+    Get the Playbook — $9 →
+  </a>
+  <div style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.6);margin-top:20px;letter-spacing:0.08em;">
+    INSTANT DOWNLOAD · LIFETIME UPDATES · PAYPAL ACCEPTED
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>AI Productivity Labs</span>
+  <span>© 2026 · All rights reserved</span>
+  <span>Powered by <span>Payhip</span></span>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    setTimeout(() => {
+      ring.style.left = e.clientX + 'px';
+      ring.style.top = e.clientY + 'px';
+    }, 80);
+  });
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.width = '18px'; cursor.style.height = '18px';
+      ring.style.width = '50px'; ring.style.height = '50px';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.width = '10px'; cursor.style.height = '10px';
+      ring.style.width = '36px'; ring.style.height = '36px';
+    });
+  });
+
+  // Scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i * 0.1) + 's';
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
