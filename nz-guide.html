@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving to New Zealand 2026 — Complete Relocation Guide</title>
+<meta name="description" content="Everything you need to move to New Zealand in 2026. Visas, costs, work, housing, healthcare and more. $19 instant download.">
+<meta property="og:title" content="Moving to New Zealand 2026 — Complete Relocation Guide">
+<meta property="og:description" content="Visas, costs, work, housing, healthcare. Everything in one guide. $19.">
+<meta property="og:image" content="https://readeunited007.github.io/ai-productivity-labs/cover_nz.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #0A2E1A;
+    --green: #1A6B3A;
+    --mint: #22C55E;
+    --gold: #F59E0B;
+    --sky: #BAE6FD;
+    --white: #ffffff;
+    --paper: #F0F7F3;
+    --ink: #0D1F14;
+    --muted: #6B8F78;
+    --border: #C6DDD0;
+    --display: 'Playfair Display', serif;
+    --body: 'Outfit', sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body); background: var(--paper); color: var(--ink); overflow-x: hidden; }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 16px 48px; display: flex; justify-content: space-between; align-items: center;
+    background: rgba(10,46,26,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(34,197,94,0.2);
+  }
+  .logo { font-family: var(--mono); font-size: 11px; color: var(--mint); letter-spacing: 0.1em; text-transform: uppercase; }
+  .header-cta {
+    background: var(--mint); color: var(--forest);
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 10px 22px; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .header-cta:hover { background: #16a34a; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--forest);
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 64px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(34,197,94,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-left {
+    padding: 80px 48px 80px 56px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .hero-eyebrow {
+    font-family: var(--mono); font-size: 10px; color: var(--mint);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px; margin-bottom: 24px;
+  }
+  .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--mint); }
+
+  .hero-title {
+    font-family: var(--display);
+    font-size: clamp(48px, 5.5vw, 80px);
+    line-height: 1.0; color: var(--white);
+    margin-bottom: 8px;
+  }
+  .hero-title .country { color: var(--mint); display: block; font-style: italic; }
+  .hero-year {
+    font-family: var(--mono); font-size: 13px; color: rgba(255,255,255,0.3);
+    letter-spacing: 0.2em; margin-bottom: 32px;
+  }
+  .hero-desc {
+    font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.7);
+    line-height: 1.7; max-width: 420px; margin-bottom: 48px;
+  }
+  .hero-desc strong { color: var(--mint); font-weight: 500; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 16px;
+    background: var(--mint); color: var(--forest);
+    font-family: var(--body); font-size: 16px; font-weight: 600;
+    padding: 18px 32px; text-decoration: none;
+    transition: all 0.2s; max-width: fit-content; margin-bottom: 20px;
+  }
+  .btn-primary:hover { background: #16a34a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,197,94,0.3); }
+
+  .hero-meta {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-family: var(--mono); font-size: 9px; color: rgba(255,255,255,0.3);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+  .hero-meta span::before { content: '✓'; color: var(--mint); }
+
+  .hero-right {
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-image {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    opacity: 0.85;
+  }
+  .hero-image-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, var(--forest) 0%, transparent 30%);
+  }
+
+  /* ── MARQUEE ── */
+  .marquee { background: var(--mint); overflow: hidden; padding: 12px 0; }
+  .marquee-inner { display: inline-flex; animation: marquee 18s linear infinite; }
+  .marquee-item {
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    color: var(--forest); text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 0 28px;
+  }
+  .marquee-item::after { content: '✦'; margin-left: 28px; opacity: 0.4; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── SECTIONS ── */
+  section { position: relative; }
+  .section-label {
+    font-family: var(--mono); font-size: 9px; color: var(--muted);
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 40px; display: flex; align-items: center; gap: 14px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside { padding: 100px 56px; background: var(--white); }
+  .inside h2 {
+    font-family: var(--display); font-size: clamp(36px, 4vw, 56px);
+    color: var(--forest); margin-bottom: 56px; line-height: 1.1;
+  }
+  .inside h2 em { color: var(--green); font-style: italic; }
+  .inside-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); }
+  .inside-card {
+    background: var(--white); padding: 36px 28px;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .inside-card:hover { background: var(--paper); }
+  .card-num {
+    font-family: var(--display); font-size: 64px; line-height: 1;
+    color: var(--border); position: absolute; top: 16px; right: 20px;
+    pointer-events: none;
+  }
+  .card-icon { font-size: 26px; margin-bottom: 16px; display: block; }
+  .card-title { font-family: var(--display); font-size: 22px; color: var(--forest); margin-bottom: 8px; line-height: 1.2; }
+  .card-desc { font-size: 13px; font-weight: 300; color: #4a6b57; line-height: 1.6; }
+  .card-new {
+    display: inline-block; background: var(--gold); color: var(--forest);
+    font-family: var(--mono); font-size: 8px; font-weight: 500;
+    padding: 3px 8px; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* ── HIGHLIGHTS ── */
+  .highlights { padding: 100px 56px; background: var(--forest); }
+  .highlights h2 { font-family: var(--display); font-size: clamp(36px,4vw,56px); color: var(--white); margin-bottom: 56px; line-height: 1.1; }
+  .highlights h2 em { color: var(--mint); font-style: italic; }
+  .highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: rgba(255,255,255,0.05); }
+  .highlight-item {
+    background: rgba(255,255,255,0.03); padding: 28px 32px;
+    border-left: 2px solid transparent; transition: border-color 0.2s, background 0.2s;
+  }
+  .highlight-item:hover { border-left-color: var(--mint); background: rgba(255,255,255,0.06); }
+  .hi-title { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+  .hi-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .hi-tag { font-family: var(--mono); font-size: 8px; color: var(--mint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+
+  /* ── PRICING ── */
+  .pricing { padding: 100px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .pricing-left h2 { font-family: var(--display); font-size: clamp(36px,4vw,56px); line-height: 1.05; margin-bottom: 20px; }
+  .pricing-left p { font-size: 15px; font-weight: 300; color: #4a6b57; line-height: 1.7; }
+  .price-box { background: var(--forest); padding: 48px; position: relative; overflow: hidden; }
+  .price-box::after { content: '$19'; position: absolute; right: -20px; top: -20px; font-family: var(--display); font-size: 160px; line-height: 1; color: rgba(255,255,255,0.04); pointer-events: none; }
+  .price-amount { font-family: var(--display); font-size: 96px; line-height: 1; color: var(--mint); margin-bottom: 4px; position: relative; z-index: 1; }
+  .price-label { font-family: var(--mono); font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; margin-bottom: 32px; text-transform: uppercase; }
+  .price-list { list-style: none; margin-bottom: 36px; position: relative; z-index: 1; }
+  .price-list li { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 12px; }
+  .price-list li::before { content: '✓'; color: var(--mint); font-weight: 700; flex-shrink: 0; }
+  .btn-buy { display: block; text-align: center; background: var(--mint); color: var(--forest); font-family: var(--body); font-size: 16px; font-weight: 600; padding: 18px; text-decoration: none; transition: background 0.2s; position: relative; z-index: 1; }
+  .btn-buy:hover { background: #16a34a; }
+  .price-note { font-family: var(--mono); font-size: 8px; color: rgba(255,255,255,0.2); text-align: center; margin-top: 14px; letter-spacing: 0.06em; }
+
+  /* ── FAQ ── */
+  .faq { padding: 100px 56px; max-width: 780px; }
+  .faq h2 { font-family: var(--display); font-size: 48px; margin-bottom: 48px; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--body); font-size: 15px; font-weight: 500; color: var(--ink); }
+  .faq-icon { color: var(--green); font-size: 22px; transition: transform 0.3s; flex-shrink: 0; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .faq-item.open .faq-a { max-height: 200px; }
+  .faq-a p { padding: 0 0 22px; font-size: 13px; font-weight: 300; color: #4a6b57; line-height: 1.7; }
+
+  /* ── FOOTER CTA ── */
+  .footer-cta { background: var(--mint); padding: 80px 56px; text-align: center; }
+  .footer-cta h2 { font-family: var(--display); font-size: clamp(40px,6vw,80px); color: var(--forest); line-height: 0.95; margin-bottom: 32px; }
+  .footer-cta h2 em { font-style: italic; }
+  .btn-final { display: inline-block; background: var(--forest); color: var(--mint); font-family: var(--body); font-size: 17px; font-weight: 600; padding: 20px 56px; text-decoration: none; transition: transform 0.2s; }
+  .btn-final:hover { transform: scale(1.03); }
+  .footer-meta { font-family: var(--mono); font-size: 9px; color: rgba(10,46,26,0.5); margin-top: 18px; letter-spacing: 0.08em; }
+
+  footer { background: var(--forest); color: rgba(255,255,255,0.2); padding: 32px 56px; display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 9px; letter-spacing: 0.06em; }
+  footer span { color: var(--mint); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    header { padding: 14px 20px; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 80px 24px 60px; }
+    .hero-right { height: 300px; }
+    .inside, .highlights, .faq { padding: 72px 24px; }
+    .pricing { grid-template-columns: 1fr; padding: 72px 24px; gap: 40px; }
+    .inside-grid { grid-template-columns: 1fr 1fr; }
+    .highlight-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 10px; padding: 24px; }
+    .footer-cta { padding: 72px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">AI Productivity Labs X</div>
+  <a href="https://payhip.com/b/cEjqv" class="header-cta">Buy Now — $19</a>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Complete Relocation Guide</div>
+    <h1 class="hero-title">
+      Moving to
+      <span class="country">New Zealand</span>
+    </h1>
+    <div class="hero-year">— 2026 Edition —</div>
+    <p class="hero-desc">
+      Everything you need to relocate successfully. Visas, work, housing, costs, healthcare and your first 90 days. 
+      <strong>Verified against official Immigration NZ sources.</strong>
+    </p>
+    <a href="https://payhip.com/b/cEjqv" class="btn-primary">
+      Get Instant Access — $19
+      <span>→</span>
+    </a>
+    <div class="hero-meta">
+      <span>15 Sections</span>
+      <span>Instant PDF</span>
+      <span>2026 Verified</span>
+      <span>Lifetime Updates</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="cover_nz.png" alt="Moving to New Zealand 2026" class="hero-image">
+    <div class="hero-image-overlay"></div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-inner">
+    <span class="marquee-item">AEWV Visa</span>
+    <span class="marquee-item">Skilled Migrant</span>
+    <span class="marquee-item">Green List</span>
+    <span class="marquee-item">Working Holiday</span>
+    <span class="marquee-item">Cost of Living</span>
+    <span class="marquee-item">Job Search</span>
+    <span class="marquee-item">Housing</span>
+    <span class="marquee-item">Healthcare</span>
+    <span class="marquee-item">KiwiSaver</span>
+    <span class="marquee-item">Aug 2026 New Pathways</span>
+    <span class="marquee-item">AEWV Visa</span>
+    <span class="marquee-item">Skilled Migrant</span>
+    <span class="marquee-item">Green List</span>
+    <span class="marquee-item">Working Holiday</span>
+    <span class="marquee-item">Cost of Living</span>
+    <span class="marquee-item">Job Search</span>
+    <span class="marquee-item">Housing</span>
+    <span class="marquee-item">Healthcare</span>
+    <span class="marquee-item">KiwiSaver</span>
+    <span class="marquee-item">Aug 2026 New Pathways</span>
+  </div>
+</div>
+
+<section class="inside fade-up">
+  <div class="section-label">What's Inside</div>
+  <h2>15 sections. <em>Everything</em><br>you need to know.</h2>
+  <div class="inside-grid">
+    <div class="inside-card">
+      <div class="card-num">01</div>
+      <span class="card-icon">🛂</span>
+      <div class="card-title">Visa Pathways</div>
+      <div class="card-desc">AEWV, Skilled Migrant, Green List, Working Holiday. Which route applies to you and exactly why.</div>
+    </div>
+    <div class="inside-card">
+      <div class="card-num">02</div>
+      <div class="card-new">⭐ New Aug 2026</div>
+      <span class="card-icon">🏆</span>
+      <div class="card-title">New Residency Pathways</div>
+      <div class="card-desc">Two brand new routes to permanent residency opening August 2026. Covered in full detail.</div>
+    </div>
+    <div class="inside-card">
+      <div class="card-num">03</div>
+      <span class="card-icon">💰</span>
+      <div class="card-title">Complete Fee Breakdown</div>
+      <div class="card-desc">AEWV ($750–$830), SMC Residence ($6,450), Working Holiday ($280–$320). Every cost upfront.</div>
+    </div>
+    <div class="inside-card">
+      <div class="card-num">04</div>
+      <span class="card-icon">🏙️</span>
+      <div class="card-title">Cost of Living</div>
+      <div class="card-desc">Auckland, Wellington, Christchurch. Real 2026 rent, salaries, groceries, transport. No guessing.</div>
+    </div>
+    <div class="inside-card">
+      <div class="card-num">05</div>
+      <span class="card-icon">💼</span>
+      <div class="card-title">Finding Work</div>
+      <div class="card-desc">Best platforms, CV tips for the NZ market, in-demand sectors, and salary benchmarks for 2026.</div>
+    </div>
+    <div class="inside-card" style="background:var(--forest);cursor:pointer" onclick="window.location='https://payhip.com/b/cEjqv'">
+      <div class="card-num" style="color:rgba(255,255,255,0.1)">+</div>
+      <span class="card-icon">📋</span>
+      <div class="card-title" style="color:white;">90-Day Action Plan</div>
+      <div class="card-desc" style="color:rgba(255,255,255,0.5)">Week by week from landing day. IRD number, banking, KiwiSaver, housing, schools — all in order.</div>
+    </div>
+  </div>
+</section>
+
+<section class="highlights fade-up">
+  <div class="section-label" style="color:rgba(255,255,255,0.3)">Also Covered</div>
+  <h2>Nothing left out.<br><em>Nothing.</em></h2>
+  <div class="highlight-grid">
+    <div class="highlight-item">
+      <div class="hi-tag">Housing</div>
+      <div class="hi-title">Renting & Buying in NZ</div>
+      <div class="hi-desc">How the rental market works, what landlords require, and buying restrictions for visa holders.</div>
+    </div>
+    <div class="highlight-item">
+      <div class="hi-tag">Healthcare</div>
+      <div class="hi-title">ACC, GP & Public Health</div>
+      <div class="hi-desc">Who qualifies for free healthcare, ACC accident cover, and how to register with a GP immediately.</div>
+    </div>
+    <div class="highlight-item">
+      <div class="hi-tag">Finance</div>
+      <div class="hi-title">IRD Number & KiwiSaver</div>
+      <div class="hi-desc">Your employer pays 3% of your salary into KiwiSaver on top of your wages. How to set it up.</div>
+    </div>
+    <div class="highlight-item">
+      <div class="hi-tag">Schools</div>
+      <div class="hi-title">Free Education for Residents</div>
+      <div class="hi-desc">School zones, enrolment, free ECE for 3–5 year olds, and how to choose the right area to live.</div>
+    </div>
+    <div class="highlight-item">
+      <div class="hi-tag">Mistakes</div>
+      <div class="hi-title">8 Errors That Cost People Years</div>
+      <div class="hi-desc">From letting your visa expire to using unregistered immigration advisers — avoid every one.</div>
+    </div>
+    <div class="highlight-item">
+      <div class="hi-tag">Shipping</div>
+      <div class="hi-title">Belongings & Pets</div>
+      <div class="hi-desc">Biosecurity rules, what you can and cannot ship, and how to bring your pets without surprises.</div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing fade-up">
+  <div class="pricing-left">
+    <div class="section-label">Pricing</div>
+    <h2>One guide.<br>One price.<br>Everything.</h2>
+    <p>No subscription. No upsell. One PDF with everything verified as of February 2026. When immigration rules change, your guide updates with them — free forever.</p>
+  </div>
+  <div>
+    <div class="price-box">
+      <div class="price-amount">$19</div>
+      <div class="price-label">One-Time · Instant Download</div>
+      <ul class="price-list">
+        <li>15 sections covering every aspect of relocating</li>
+        <li>All visa pathways including August 2026 new routes</li>
+        <li>Real 2026 costs — rent, fees, living expenses</li>
+        <li>90-day action plan from landing day</li>
+        <li>Verified against official NZ government sources</li>
+        <li>Quarterly updates — free forever</li>
+      </ul>
+      <a href="https://payhip.com/b/cEjqv" class="btn-buy">Get Instant Access →</a>
+      <div class="price-note">SECURE PAYMENT · PAYHIP + PAYPAL · INSTANT PDF DOWNLOAD</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq fade-up">
+  <h2>Questions.</h2>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Is this information current for 2026? <span class="faq-icon">+</span></button>
+    <div class="faq-a"><p>Yes. All information was verified against official Immigration New Zealand sources in February 2026, including the new August 2026 residency pathway announcements. As rules update, so does this guide — all updates are free.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Is this legal or immigration advice? <span class="faq-icon">+</span></button>
+    <div class="faq-a"><p>No — and the guide makes this clear. It is a comprehensive information resource to help you understand your options and prepare effectively. For complex situations, we recommend a Licensed Immigration Adviser (LIA) — the guide explains how to find one.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Does it cover all nationalities? <span class="faq-icon">+</span></button>
+    <div class="faq-a"><p>Yes. The guide covers visa pathways that apply regardless of nationality — AEWV, Skilled Migrant, Green List, Working Holiday, and family visas. Nationality-specific differences are noted where relevant.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">What format is the guide? <span class="faq-icon">+</span></button>
+    <div class="faq-a"><p>A professionally formatted PDF. Download it once, keep it forever. Works on all devices — phone, tablet, laptop. Payhip sends you the download link immediately after payment.</p></div>
+  </div>
+</section>
+
+<div class="footer-cta">
+  <h2>Make your move<br><em>with confidence.</em></h2>
+  <a href="https://payhip.com/b/cEjqv" class="btn-final">Get the Guide — $19 →</a>
+  <div class="footer-meta">INSTANT DOWNLOAD · LIFETIME UPDATES · PAYPAL ACCEPTED</div>
+</div>
+
+<footer>
+  <span>AI Productivity Labs X</span>
+  <span>© 2026 All rights reserved</span>
+  <span>Powered by Payhip</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
